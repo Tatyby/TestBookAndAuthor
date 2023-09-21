@@ -65,9 +65,9 @@ public class Controller {
     }
 
     @RequestMapping(value = "books/{id}/wiki", method = RequestMethod.GET)
-    public Mono<Object> getBookFromWiki(@PathVariable("id") Integer bookId) {
-        return
-                wikiService.getBookFromWiki(bookId);
+    public ResponseEntity<Mono<Object>> getBookFromWiki(@PathVariable("id") Integer bookId) {
+        return ResponseEntity.status(HttpStatus.OK)
+                .body(wikiService.getBookFromWiki(bookId));
 
     }
 

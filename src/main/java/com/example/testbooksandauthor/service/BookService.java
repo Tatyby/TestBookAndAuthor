@@ -47,7 +47,6 @@ public class BookService {
         Book book = new Book()
                 .setBookName(newBook.getBookName());
         bookRepository.save(book);
-
         List<Author> authors = new ArrayList<>();
         for (AuthorRequest authorRequest : newBook.getAuthors()) {
             Author author = authorRepository.findByAuthorFullName(authorRequest.getAuthorFullName());
