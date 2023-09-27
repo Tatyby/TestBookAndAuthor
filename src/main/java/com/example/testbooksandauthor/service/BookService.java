@@ -35,7 +35,6 @@ public class BookService {
                 .map(this::buildBookResponse)
                 .collect(Collectors.toList());
     }
-
     @Transactional(readOnly = true)
     public BookResponse getBookById(final Integer id) {
         final Book book = bookRepository.findById(id)
